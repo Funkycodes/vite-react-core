@@ -1,0 +1,83 @@
+// Mixins and Extends
+
+%page {
+  position: relative;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: auto;
+  }
+}
+
+%cover {
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+%container {
+  width: 100vw;
+  margin-inline: auto;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  @include media("<=tablet") {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+%container-1 {
+  width: 100vw;
+  margin-inline: auto;
+  padding-left: 16rem;
+  padding-right: 16rem;
+  @include media("<=tablet") {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+%abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+%flex-ac {
+  display: flex;
+  align-items: center;
+}
+%flex-ac-jc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%flex-ac-jb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+%show {
+  visibility: visible;
+  opacity: 1;
+}

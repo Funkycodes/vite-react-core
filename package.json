@@ -1,0 +1,32 @@
+{
+  "name": "vite-react-core",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "eslint": "^8.41.0",
+    "prefix": "^1.0.0",
+    "sass": "^1.61.0",
+    "splitting": "^1.0.6",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "vite": "^4.1.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite-plugin-node-polyfills": "^0.9.0"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.8.1",
+    "auto-bind": "^5.0.1",
+    "dotenv": "^16.0.3",
+    "gsap": "^3.11.5",
+    "lodash": "^4.17.21",
+    "normalize-wheel": "^1.0.1"
+  }
+}
