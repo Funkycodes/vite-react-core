@@ -2,9 +2,9 @@ import React from 'react';
 
 const App = () => {
   return (
-    <>
-      <canvas class="webgl" />
-    </>
+    <React.Fragment>
+      <canvas className="webgl" />
+    </React.Fragment>
   );
 };
 

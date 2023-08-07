@@ -5,12 +5,13 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 const options = { pretty: true }; // FIXME: pug pretty is deprecated!
 
-export default defineConfig(async ({ mode, command }) => {
-  return {
+export default defineConfig({
     root: "src",
     base: './',
+    publicDir:'../static/',
     build: {
       outDir: "../dist",
+      emptyOutDir:true,
     },
     server: {
       host: true,
@@ -29,5 +30,4 @@ export default defineConfig(async ({ mode, command }) => {
       }),
       react()
     ],
-  };
 });

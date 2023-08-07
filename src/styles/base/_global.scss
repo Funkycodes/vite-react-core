@@ -29,11 +29,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  font-size: Min(calc(100vh / 900 * 10), calc(100vw / 1440 * 10));
+  font-size: min(calc(100vh / 900 * 10), calc(100vw / 1440 * 10));
   line-height: 1;
 
   @include media("<=tablet") {
-    font-size: Min(calc(100vw / 992 * 10), calc(100vh / 750 * 10));
+    font-size: min(calc(100vw / 992 * 10), calc(100vh / 750 * 10));
   }
 
   @include media("<=mobile2x") {
