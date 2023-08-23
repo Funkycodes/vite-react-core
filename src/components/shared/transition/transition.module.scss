@@ -1,0 +1,28 @@
+@use "/styles/style.scss";
+
+.transition {
+  @extend %cover;
+
+  padding: 6rem;
+  z-index: style.z("preloader");
+  background: #333;
+  clip-path: inset(100% 0% 0% 0%);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  color: white;
+
+  pointer-events: none;
+
+  &__text {
+    font-size: max(32px, 4rem);
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    place-self: center;
+  }
+  &__credits {
+    font-size: max(14px, 1.8rem);
+    place-self: end;
+  }
+}

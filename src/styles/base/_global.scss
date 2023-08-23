@@ -29,7 +29,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  font-size: min(calc(100vh / 900 * 10), calc(100vw / 1440 * 10));
+  font-size: min(calc(100vh / 1117 * 10), calc(100vw / 1728 * 10));
   line-height: 1;
 
   @include media("<=tablet") {
@@ -40,11 +40,14 @@ html {
     font-size: calc(100vw / 675 * 10);
   }
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   width: 100%;
   min-height: 100%;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 canvas {

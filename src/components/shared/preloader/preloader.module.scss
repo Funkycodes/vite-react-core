@@ -1,0 +1,54 @@
+@use "/styles/style.scss";
+
+.preloader {
+  @extend %cover;
+  z-index: style.z("preloader");
+
+  &__inner {
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+
+    padding: 3.2rem;
+    background: style.$infinitus-beige;
+    position: relative;
+  }
+
+  &__header {
+    padding-inline-start: inherit;
+    svg {
+      height: 28px;
+      transform: translateX(-28px);
+    }
+  }
+
+  &__main {
+    .marquee {
+      position: absolute;
+      top: 50%;
+      left: -1rem;
+      color: #fff;
+      font-size: 2.4rem;
+
+      width: 120vw;
+      padding-block: 1.5em;
+      background: style.$infinitus-green;
+      transform: translate3d(0, -100%, 0) rotate(3deg);
+      transform-origin: 100%;
+
+      &:last-of-type {
+        left: unset;
+        right: -1rem;
+        transform: translate3d(0, 0%, 0) rotate(-3deg);
+      }
+    }
+  }
+
+  &__footer {
+    justify-self: end;
+  }
+  &__progress {
+    font-size: max(4rem, 32px);
+    color: style.$infinitus-green;
+  }
+}

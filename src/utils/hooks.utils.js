@@ -1,0 +1,1 @@
+export const setRefComposer = (ref) => (elem) => (ref.current = elem);

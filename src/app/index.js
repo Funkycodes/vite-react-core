@@ -113,7 +113,7 @@ class App {
   }
 }
 
-new App();
+// new App();
 setTimeout(() => {
   console.log("%c I tried my best. Love❤️. Habib Carter Olorunfemi theMaskedOtaku. Bye ", "background-color:grey; color:white; font-family: 'Segoe UI'");
 }, 10000);

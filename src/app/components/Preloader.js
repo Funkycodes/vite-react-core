@@ -1,21 +1,15 @@
-import Animation from "../classes/Animation";
 import gsap from "gsap";
+import Component from "../classes/Component";
 
-export default class Preloader extends Animation {
-  constructor() {
+export default class Preloader extends Component {
+  constructor () {
     super({
       element: ".preloader",
       elements: {
-        wrapper: ".preloader__wrapper",
-        text: ".preloader__text",
+        wrapper: ".preloader__inner",
         progress: ".preloader__progress"
       },
     });
-
-    this.length = 0;
-    this.media = [...document.querySelectorAll("[data-src]")];
-    this.animateIn();
-    this.createLoader();
   }
 
   createLoader() {
@@ -31,7 +25,7 @@ export default class Preloader extends Animation {
 
     // this.addEvents();
     for (let index = 0; index < 100; index++) {
-      setTimeout(this.onAssetLoaded, 50 * index)
+      setTimeout(this.onAssetLoaded, 50 * index);
     }
   }
 
@@ -48,7 +42,7 @@ export default class Preloader extends Animation {
 
     if (percent === 1)
       setTimeout(() => {
-        this.onLoaded()
+        this.onLoaded();
       }, 1000);
   }
 
@@ -61,22 +55,17 @@ export default class Preloader extends Animation {
   //   this.elements.button.addEventListener("click", this.onLoaded);
   // }
   animateOut() {
-    const timeline = gsap.timeline()
-    timeline.set(this.element, {
-      bottom: "unset",
-      transformOrigin: "left top"
-    });
-
-    timeline.to(this.element, {
-      y: "-100%",
-      duration: 1.5,
-      ease: "expo.inOut",
-      onComplete: this.destroy
-    })
-  }
-
-  animateIn() {
-    gsap.to(this.element, { autoAlpha: 1 })
+    const timeline =
+      gsap.timeline({ paused: true })
+        .set(this.element, {
+          bottom: "unset",
+          transformOrigin: "left top"
+        }).to(this.element, {
+          y: "-100%",
+          duration: 1.5,
+          ease: "expo.inOut",
+          onComplete: this.destroy
+        }).restart();
   }
   destroy() {
     this.element.parentNode.removeChild(this.element);

@@ -1,0 +1,34 @@
+@use "/styles/style.scss";
+.marquee {
+  display: flex;
+  overflow: hidden;
+  will-change: transform;
+
+  &__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    animation: marquee var(--duration) linear infinite;
+  }
+}
+.marquee--inverted .marquee__inner {
+  animation: marquee--inverted var(--duration) linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(calc(var(--offset) * -1), 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-100% - var(--offset)), 0, 0);
+  }
+}
+
+@keyframes marquee--inverted {
+  from {
+    transform: translate3d(calc(-100% - var(--offset)), 0, 0);
+  }
+  to {
+    transform: translate3d(calc(var(--offset) * -1), 0, 0);
+  }
+}

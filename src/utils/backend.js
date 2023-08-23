@@ -1,0 +1,1 @@
+// For a backend service provider, either supabase or firebase
