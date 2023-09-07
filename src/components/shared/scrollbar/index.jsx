@@ -33,12 +33,9 @@ const Scrollbar = ({
     if (!pointerDown) return;
     const offset = (windowHeight - trackHeight) / 2;
     const y = mapRange(0, windowHeight, e.clientY, -offset, trackHeight + offset);
-    console.log(offset);
     const progress = clamp(0, y / trackHeight, 1);
     const newPos = lenis.limit * progress;
-    console.log(newPos);
     window.scrollTo(0, newPos);
-    console.log(lenis.direction);
   });
   useEventListener("pointerup", () => { setPointerDown(false); });
 
