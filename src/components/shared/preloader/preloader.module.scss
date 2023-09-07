@@ -1,8 +1,9 @@
-@use "/styles/style.scss";
+@use "/styles/abstracts";
 
 .preloader {
   @extend %cover;
-  z-index: style.z("preloader");
+  position: fixed;
+  z-index: abstracts.z("preloader");
 
   &__inner {
     height: 100%;
@@ -10,7 +11,7 @@
     align-content: space-between;
 
     padding: 3.2rem;
-    background: style.$infinitus-beige;
+    background: abstracts.$infinitus-beige;
     position: relative;
   }
 
@@ -32,7 +33,7 @@
 
       width: 120vw;
       padding-block: 1.5em;
-      background: style.$infinitus-green;
+      background: abstracts.$infinitus-green;
       transform: translate3d(0, -100%, 0) rotate(3deg);
       transform-origin: 100%;
 
@@ -49,6 +50,6 @@
   }
   &__progress {
     font-size: max(4rem, 32px);
-    color: style.$infinitus-green;
+    color: abstracts.$infinitus-green;
   }
 }

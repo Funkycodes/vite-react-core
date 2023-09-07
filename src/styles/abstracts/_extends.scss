@@ -1,22 +1,12 @@
 // Mixins and Extends
+@use "./breakpoints";
 
 %page {
   position: relative;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
   transition:
     opacity 0.35s ease,
     visibility 0.35s ease;
-
-  &--active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    z-index: auto;
-  }
+  min-height: calc(100 * var(--vh, 1dvh));
 }
 
 %cover {
@@ -33,7 +23,7 @@
   margin-inline: auto;
   padding-left: 6rem;
   padding-right: 6rem;
-  @include media("<=tablet") {
+  @include breakpoints.media("<=tablet") {
     padding-left: 4rem;
     padding-right: 4rem;
   }
@@ -44,7 +34,7 @@
   margin-inline: auto;
   padding-left: 16rem;
   padding-right: 16rem;
-  @include media("<=tablet") {
+  @include breakpoints.media("<=tablet") {
     padding-left: 4rem;
     padding-right: 4rem;
   }

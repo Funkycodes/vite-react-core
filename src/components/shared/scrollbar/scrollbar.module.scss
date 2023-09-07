@@ -1,0 +1,26 @@
+@use "/styles/abstracts";
+.scrollbar {
+  position: fixed;
+  z-index: abstracts.z("scrollbar");
+  height: calc(100 * var(--vh, 1dvh));
+  right: var(--position-right, 10px);
+  padding-block: var(--offset);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.track {
+  position: relative;
+
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+.thumb {
+  cursor: grab;
+  min-height: var(--min-height);
+  background-color: var(--bg-color);
+  border-radius: 24px;
+  width: 6px;
+}

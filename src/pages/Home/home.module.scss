@@ -1,0 +1,22 @@
+@use "/styles/abstracts";
+.home {
+  @extend %page;
+  height: 300vh;
+
+  .grid {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    height: 100%;
+    width: calc(100% - 120px);
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+
+    .column {
+      background: pink;
+    }
+  }
+}

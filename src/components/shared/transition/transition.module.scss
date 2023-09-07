@@ -1,10 +1,10 @@
-@use "/styles/style.scss";
+@use "/styles/abstracts";
 
 .transition {
   @extend %cover;
 
   padding: 6rem;
-  z-index: style.z("preloader");
+  z-index: abstracts.z("preloader");
   background: #333;
   clip-path: inset(100% 0% 0% 0%);
 

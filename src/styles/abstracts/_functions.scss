@@ -1,3 +1,4 @@
+@use "./variables";
 /// Base url link
 /// @type string
 $base-url: "/assets/";
@@ -16,8 +17,8 @@ $base-url: "/assets/";
 }
 
 @function z($name) {
-  @if index($z-indexes, $name) {
-    @return (length($z-indexes) - index($z-indexes, $name) + 1);
+  @if index(variables.$z-indexes, $name) {
+    @return (length(variables.$z-indexes) - index(variables.$z-indexes, $name) + 1);
   } @else {
     @warn "There is not item '#{$name}' in this list; Choose one of: '#{$z-indexes}'";
 
