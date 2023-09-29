@@ -19,6 +19,7 @@
     "vite": "^4.4.9"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.19",
     "@studio-freight/react-lenis": "^0.0.26",
     "@studio-lumio/hooks": "^0.1.25",
     "clsx": "^2.0.0",

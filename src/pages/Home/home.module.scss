@@ -1,22 +1,19 @@
-@use "/styles/abstracts";
-.home {
+@use "@/styles/abstracts";
+
+.content {
   @extend %page;
   height: 300vh;
+  @extend %container;
 
-  .grid {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%);
-    height: 100%;
-    width: calc(100% - 120px);
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 32px;
-
-    .column {
-      background: pink;
-    }
+  .push {
+    height: 100vh;
+  }
+  .flex {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
   }
 }

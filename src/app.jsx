@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Root from "./pages/root";
-import _404 from "./pages/_404";
-import Home from "./pages/Home";
 import Transition from "./components/shared/transition/transition";
-import Preloader from "./components/shared/preloader";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import Scrollbar from "./components/shared/scrollbar";
+import Home from "./pages/Home";
+import _404 from "./pages/_404";
+import { ScrollTrigger } from "./utils/gsap";
 
 const App = () => {
   const location = useLocation();
   const [ transitionStage, setTransitionStage ] = useState("idle");
   const [ userLocation, setuserLocation ] = useState(location);
+
+  const lenis = useLenis(ScrollTrigger.update);
 
   useEffect(() => {
     if (location !== userLocation) {
@@ -25,15 +25,15 @@ const App = () => {
       setuserLocation(location);
   }, [ transitionStage ]);
 
+
+
   return (
     <ReactLenis root options={{
       lerp: 0.1
     }}>
-      <Scrollbar />
-      <Preloader />
       <Transition transitionStage={transitionStage} setTransitionStage={setTransitionStage} />
       <Routes location={userLocation}>
-        <Route path="/" element={<Root />} >
+        <Route path="/">
           <Route index element={<Home />} />
         </Route>
         <Route path="*" element={<_404 />} />

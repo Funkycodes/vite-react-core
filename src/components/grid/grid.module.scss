@@ -1,0 +1,16 @@
+.grid {
+  position: var(--position);
+  display: grid;
+  gap: var(--gutter);
+  height: 100%;
+  width: calc(100% - var(--margin) * 2);
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  inset-inline: var(--margin);
+  margin-inline: auto;
+  pointer-events: none;
+
+  .column {
+    background: var(--color);
+    width: 100%;
+  }
+}

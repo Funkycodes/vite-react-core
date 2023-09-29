@@ -1,8 +1,8 @@
-@use "/styles/abstracts";
+@use "@/styles/abstracts";
 .scrollbar {
   position: fixed;
   z-index: abstracts.z("scrollbar");
-  height: calc(100 * var(--vh, 1dvh));
+  height: 100vh;
   right: var(--position-right, 10px);
   padding-block: var(--offset);
 
@@ -22,5 +22,5 @@
   min-height: var(--min-height);
   background-color: var(--bg-color);
   border-radius: 24px;
-  width: 6px;
+  width: 5px;
 }

@@ -1,24 +1,23 @@
 import Page from "../classes/Page";
 
 export default class Home extends Page {
-  constructor() {
+  constructor () {
     super({
       selector: ".about",
       selectors: {
         wrapper: ".about__wrapper",
-      },
-      classes: {
-        active: "about--active",
-      },
+      }
     });
   }
 
-  async show() {
-    super.show();
-    this.element.classList.add(this.classes.active);
+  create() {
+    super.create();
   }
-  hide() {
+
+  show() {
+    super.show();
+  }
+  reset() {
     super.hide();
-    this.element.classList.remove(this.classes.active);
   }
 }

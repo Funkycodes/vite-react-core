@@ -1,14 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { clamp, mapRange } from "@/animations/utils/math";
 import { useLenis } from "@studio-freight/react-lenis";
 import { useEventListener, useRect, useWindowSize } from "@studio-lumio/hooks";
-import { clamp, mapRange } from "../../../app/utils/math";
+import React, { useEffect, useRef, useState } from 'react';
 
 import cn from "./scrollbar.module.scss";
 
 const Scrollbar = ({
   offset = 4,
   minHeight = 24,
-  positionRight = 10,
+  positionRight = 8,
   backgroundColor = "orange",
 }) => {
   const [ pointerDown, setPointerDown ] = useState(false);
@@ -32,10 +32,10 @@ const Scrollbar = ({
     e.preventDefault();
     if (!pointerDown) return;
     const offset = (windowHeight - trackHeight) / 2;
-    const y = mapRange(0, windowHeight, e.clientY, -offset, trackHeight + offset);
+    const y = mapRange(0, windowHeight, e.clientY, offset, trackHeight - offset);
     const progress = clamp(0, y / trackHeight, 1);
     const newPos = lenis.limit * progress;
-    window.scrollTo(0, newPos);
+    lenis.scrollTo(newPos);
   });
   useEventListener("pointerup", () => { setPointerDown(false); });
 

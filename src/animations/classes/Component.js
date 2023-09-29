@@ -1,9 +1,7 @@
-import EventEmitter from "events";
-import AutoBind from "auto-bind";
+import AutoBind from "../utils/bind";
 
-export default class Component extends EventEmitter {
+export default class Component {
   constructor ({ element, elements }) {
-    super();
     AutoBind(this);
 
     this.selector = element;

@@ -5,7 +5,7 @@ import App from "./app";
 
 import "./styles/style.scss";
 
-const container = document.querySelector("#root");
+const container = document.querySelector("#_app");
 createRoot(container).render((
   <StrictMode>
     <Router>

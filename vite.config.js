@@ -4,12 +4,16 @@ import react from '@vitejs/plugin-react';
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-  root: "src",
   base: './',
-  publicDir: '../static/',
+  publicDir: "static",
   build: {
-    outDir: "../dist",
+    outDir: "dist",
     emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      "@": require('path').resolve(__dirname, 'src'),
+    }
   },
   server: {
     host: true,
