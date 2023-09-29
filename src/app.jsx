@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Transition from "./components/shared/transition/transition";
+import Transition from "./components/transition/transition";
 import Home from "./pages/Home";
 import _404 from "./pages/_404";
 import { ScrollTrigger } from "./utils/gsap";
@@ -12,7 +12,7 @@ const App = () => {
   const [ transitionStage, setTransitionStage ] = useState("idle");
   const [ userLocation, setuserLocation ] = useState(location);
 
-  const lenis = useLenis(ScrollTrigger.update);
+  useLenis(ScrollTrigger.update);
 
   useEffect(() => {
     if (location !== userLocation) {

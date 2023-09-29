@@ -31,7 +31,7 @@ export default function Parallax({
           trigger: () => direction === "vertical"
             ? (position === 'top' ? document.body : trigger.current)
             : (position === "left" ? document.body : trigger.current),
-          scrub: true,
+          scrub: Math.abs(speed),
           start: () => direction === "vertical"
             ? (position === 'top' ? 'top top' : 'top bottom')
             : (position === "left" ? "left left" : "left right"),

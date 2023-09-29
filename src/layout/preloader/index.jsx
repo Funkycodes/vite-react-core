@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from "@/utils/gsap";
 import { useLenis } from "@studio-freight/react-lenis";
 /*** File Imports ****/
-import Marquee from "@/components/shared/marquee";
+import Marquee from "@/components//marquee";
 /***Utils */
 import { random } from "@/animations/utils/math";
 import cn from "./preloader.module.scss";

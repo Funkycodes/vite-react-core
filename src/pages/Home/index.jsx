@@ -1,5 +1,5 @@
 import Grid from "@/components/grid";
-import Parallax from "@/components/shared/parallax";
+import Parallax from "@/components/parallax";
 import FrontLayout from "@/layout/frontlayout";
 import clsx from "clsx";
 import React from 'react';
